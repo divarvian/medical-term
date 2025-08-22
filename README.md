@@ -47,7 +47,7 @@ Arsitektur aplikasi ini terdiri dari tiga komponen utama yang bekerja sama:
 
 Anda dapat mencoba aplikasi ini secara langsung di sini:
 
-**[Tautan ke Demo Langsung Anda]** (Contoh: `https://divarvian.github.io/medical-term`)
+[https://divarvian.github.io/medical-term](https://divarvian.github.io/medical-term)
 
 ---
 
