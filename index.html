@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penyederhana Istilah Medis</title>
+  <meta name="description" content="Pahami istilah medis yang rumit dengan penjelasan sederhana bertenaga AI.">
+  <meta name="keywords" content="AI, Istilah Medis, Penyederhanaan, Kesehatan, Teknologi, IBM Granite">
+  <meta name="author" content="divarvian">
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+  <!-- Main container with a two-column layout on larger screens -->
+  <div class="w-full max-w-4xl bg-white rounded-2xl card-shadow overflow-hidden grid grid-cols-1 md:grid-cols-2">
+
+    <!-- Left Panel: Branding and Information -->
+    <div
+      class="bg-blue-600 text-white p-8 md:p-12 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+      <div class="p-4 bg-white/20 rounded-full mb-6">
+        <i class="fas fa-stethoscope fa-2x text-white"></i>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Penyederhana Istilah Medis</h1>
+      <p class="text-blue-100 mb-4">Pahami istilah medis yang rumit dengan penjelasan sederhana bertenaga AI.</p>
+      <div class="mt-auto pt-6">
+        <p class="text-xs text-blue-200 opacity-80">Mendukung SDG 3: Kehidupan Sehat dan Sejahtera.</p>
+      </div>
+    </div>
+
+    <!-- Right Panel: Interactive Area -->
+    <div class="p-6 md:p-8 space-y-6 flex flex-col">
+
+      <!-- Input Section -->
+      <div>
+        <label for="userInput" class="block text-sm font-medium text-gray-700 mb-2">Masukkan istilah medis di
+          sini:</label>
+        <div class="relative">
+          <i class="fas fa-book-medical absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input type="text" id="userInput"
+            class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150"
+            placeholder="Contoh: Hipertensi, Kardiomiopati">
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button id="explainBtn"
+        class="w-full btn-gradient text-white font-semibold py-3 px-4 rounded-lg hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 transform hover:scale-105">
+        <i class="fas fa-lightbulb mr-2"></i> Jelaskan Istilah Ini
+      </button>
+
+      <!-- Results Section -->
+      <div class="flex-grow space-y-4 pt-4 border-t border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-800">Penjelasan Sederhana:</h2>
+
+        <!-- Loading State -->
+        <div id="loading" class="hidden flex flex-col items-center justify-center text-center p-4">
+          <div class="spinner"></div>
+          <p id="loadingText" class="text-gray-600 mt-3">AI sedang mencari jawaban terbaik... Mohon tunggu.</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="hidden p-4 bg-red-100 text-red-700 rounded-lg"></div>
+
+        <!-- Success State -->
+        <div id="result" class="hidden relative p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <button id="copyBtn"
+            class="absolute top-2 right-2 bg-white text-gray-500 hover:bg-gray-100 hover:text-blue-600 px-3 py-1 rounded-full text-sm transition-all duration-200 shadow-sm"
+            title="Salin ke clipboard">
+            <i class="fas fa-copy"></i>
+          </button>
+          <p id="resultText" class="text-gray-800 whitespace-pre-wrap pr-10"></p>
+
+          <!-- Translation Button Container -->
+          <div class="mt-4 pt-4 border-t border-blue-200">
+            <button id="translateBtn"
+              class="hidden w-full sm:w-auto bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-200 shadow-sm">
+              <i class="fas fa-language mr-2"></i> Terjemahkan ke Bahasa Indonesia
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="text-center pt-4 mt-auto">
+        <p class="text-xs text-gray-400">Powered by IBM Granite via Replicate API</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
